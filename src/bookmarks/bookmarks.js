@@ -4,10 +4,38 @@ const logger = require('../logging.js');
 const bookmarkRouter = express.Router();
 const bookmarks = require('../store.js');
 
+const bodyParser = express.json()
+
 bookmarkRouter.route('/bookmarks')
     .get((req, res) => {
         res.json(bookmarks);
-    });
+    })
+    .post(bodyParser, (req, res) => {
+        const { url, title, rating = 1, description = '' } = req.body;
+
+        if (!url) {
+            return res.status(404).send('Invalid Data')
+        }
+
+        if (!title) {
+            return res.status(404).send('Invalid Data')
+        }
+
+        const id = uuid();
+        const newBookmark = {
+            url,
+            title,
+            rating,
+            description
+        }
+
+        bookmarks.push(newBookmark)
+
+        return res
+            .status(201)
+            .location(`http://localhost:8000/bookmarks/${id}`)
+            .json(newBookmark)
+    })
 
 bookmarkRouter.route('/bookmarks/:id')
     .get((req, res) => {
