@@ -26,6 +26,7 @@ bookmarkRouter
 
     const id = uuid();
     const newBookmark = {
+      id,
       url,
       title,
       rating,
