@@ -14,7 +14,6 @@ const morganOption = NODE_ENV === 'production' ? 'tiny' : 'common';
 app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
-app.use(bookmarksRouter);
 
 app.use(function validateBearerToken(req, res, next) {
   const apiToken = process.env.API_TOKEN;
@@ -31,8 +30,10 @@ app.use(function validateBearerToken(req, res, next) {
   next();
 });
 
+app.use(bookmarksRouter);
+
 app.get('/', (req, res) => {
-  res.send('Hello, boilerplate!');
+  res.send('Bookmarks server.');
 });
 
 app.use(function errorHandler(error, req, res, next) {
