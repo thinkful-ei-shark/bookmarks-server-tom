@@ -1,2 +1,10 @@
 {"message":"Deleted bookmark with id: 1143a007-744b-4bf5-b710-ce74fca67fb5","level":"info"}
 {"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"Unauthorized request to path: /bookmarks","level":"error"}
+{"message":"New Bookmark [object Object] created","level":"info"}
+{"message":"New Bookmark [object Object] created","level":"info"}
+{"message":"Deleted bookmark with id: 3fbe7859-e3ee-4550-b806-2b2d640b9bad","level":"info"}
+{"message":"Could not find id: 3fbe7859-e3ee-4550-b806-2b2d640b9bad","level":"error"}
